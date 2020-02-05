@@ -12,14 +12,9 @@ import de.robv.android.xposed.XSharedPreferences;
 import static bin.xposed.Unblock163MusicClient.Utils.log;
 
 public class Settings {
-    private static final Date EXPIRED_DATE = new GregorianCalendar(2029, 10 - 1, 1).getTime();
     private static String chinaIP;
     private static WeakReference<XSharedPreferences> weakModulePreferences = new WeakReference<>(null);
     private static WeakReference<Resources> weakModuleResources = new WeakReference<>(null);
-
-    public static boolean isExpired() {
-        return Calendar.getInstance().getTime().after(EXPIRED_DATE);
-    }
 
     private static XSharedPreferences getModuleSharedPreferences() {
         XSharedPreferences preferences = weakModulePreferences.get();

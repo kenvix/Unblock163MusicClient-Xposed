@@ -57,7 +57,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         setInfo();
         setIcon();
-        checkExpired();
         removeDivider();
         // checkState();
     }
@@ -116,12 +115,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             Toast.makeText(this, getString(R.string.hint_active, method), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, getString(R.string.hint_not_active), Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void checkExpired() {
-        if (Settings.isExpired()) {
-            Toast.makeText(this, getString(R.string.hint_expired), Toast.LENGTH_LONG).show();
         }
     }
 
